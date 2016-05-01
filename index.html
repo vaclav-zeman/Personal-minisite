@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <title>Václav Zeman - web developer</title>
+  
+  <meta name="description" content="I'm young, enthusiastic web developer living in Czech republic.">
+  <meta name="author" content="Václav Zeman">
+  <meta property="og:title" content="Václav Zeman - web developer">
+  <meta name="theme-color" content="#333">
+
+  <link href='style.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://weloveiconfonts.com/api/?family=entypo' rel='stylesheet'>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" sizes="192x192" href="favicon.png">
+</head>
+  <body class="bg-blue">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50798394-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <main class="Content">
+      <h1>
+        <span>Hi, I'm</span>
+        Václav Zeman
+        <span>
+          and I work as a
+          <abbr
+            onclick="ga('send', 'event', 'Actions', 'Modal Opened')"
+            title="Click to learn more"
+            class="Modal-trigger tooltip is-shaking" >
+            frontend developer
+          </abbr>
+        </span>
+      </h1>
+
+      <a href="https://linkedin.com/in/václav-zeman-72a3008b" class="MainButton" target="_blank">
+        Visit my LinkedIn profile
+      </a>
+    </main>
+
+    <section class="Modal">
+      <button class="Modal-close entypo-cancel-squared"></button>
+      <h2>
+        Firstly, who are you?
+      </h2>
+      <p>
+        I'm 20 years old web developer, JavaScript enthusiast and rookie traveler.
+        I live in Czech republic at the moment but will hopefully relocate in the near future.
+      </p>
+
+      <h2>
+        What do you do?
+      </h2>
+      <p>
+        Web applications. I'm keen on using modern technologies and I'm always trying
+        to learn something new to broaden my knowledge.
+      </p>
+
+      <h2>
+        Can you be more specific?
+      </h2>
+      <p>
+        Sure. I like using React.js, Redux, Node.js <em>(not very advanced)</em>,
+        WebSockets, Webpack, WebGL, gulp.js ... I am also proficient in HTML5, CSS3 of course.
+      </p>
+
+      <div class="u-center">
+        <a href="cv.pdf" class="CVButton" download>Download my CV</a>
+        <a href="mailto:vaclav.zeman@outlook.com" class="CVButton tooltip" title="vaclav.zeman@outlook.com">
+          Send me an e-mail
+        </a>
+      </div>
+    </section>
+
+    <div class="SocialButtons">
+      <a
+        href="mailto:vaclav.zeman@outlook.com"
+        target="_blank"
+        title="Email me!"
+        class="SocialButton entypo-mail tooltip"></a>
+      <a
+        href="https://linkedin.com/in/václav-zeman-72a3008b"
+        target="_blank"
+        title="My LinkedIn"
+        class="SocialButton entypo-linkedin tooltip"></a>
+      <a
+        href="https://github.com/vaclav-zeman"
+        target="_blank"
+        title="My Github"
+        class="SocialButton entypo-github tooltip"></a>
+        <a
+          href="http://czechsontheroad.wordpress.com"
+          target="_blank"
+          title="Travel blog"
+          class="SocialButton entypo-suitcase tooltip"></a>
+    </div>
+
+    <button class="RefreshButton entypo-arrows-ccw" title="Change theme"></button>
+
+    <span class="Overlay"></span>
+
+    <canvas id="can" width="200" height="200"></canvas>
+
+    <script src="tooltips.js" defer></script>
+    <script src="background.js" defer></script>
+    <script src="modal.js" defer></script>
+    <script>
+      console.log(`Hey!🖖 I see you like console as much as I do! However do not expect very much from this website.😜`)
+    </script>
+  </body>
+</html>

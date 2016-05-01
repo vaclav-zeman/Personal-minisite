@@ -1,0 +1,320 @@
+@import 'tooltips.css';
+
+html {
+  background: #333;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  color: white;
+  margin: 0;
+  padding: 100px 5vw 100px 10vw;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 500ms;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body.is-expanded {
+  transform: scale(0.95);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    min-width: 310px;
+    padding: 50px 20px 20px;
+  }
+}
+
+.bg-orange {
+  background: #fe8c00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-blue {
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-purple {
+  background: #9D50BB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #9D50BB , #6E48AA); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* entypo icon font */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes shake {
+  from, to {
+   transform: rotate(0);
+ }
+
+ 10%, 30%, 50%, 70%, 90% {
+   transform: rotate(0.5deg);
+ }
+
+ 20%, 40%, 60%, 80% {
+   transform: rotate(-0.5deg);
+ }
+}
+
+.is-shaking {
+  animation: shake 2s infinite;
+  animation-delay: 3s;
+}
+
+abbr {
+  padding-bottom: 3px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: inline-block;
+  transition: 300ms;
+}
+
+abbr:hover {
+  animation: none;
+  transform: scale(1.015);
+}
+
+h1 {
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  font-size: 48px;
+}
+
+h1 > span {
+  display: block;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+    line-height: 1.7;
+    margin: 40px 0;
+  }
+
+  h1 > span {
+    font-size: 19px;
+  }
+}
+
+.MainButton {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: .8em 1em;
+  font-size: 18px;
+  border: 3px solid white;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  transition: 200ms;
+}
+
+@media screen and (max-width: 768px) {
+  .MainButton {
+    font-size: 15px;
+  }
+}
+
+.MainButton:hover {
+  background: white;
+  color: #f83600;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+.bg-blue .MainButton:hover { color: #0072ff; }
+.bg-purple .MainButton:hover { color: #6E48AA; }
+
+.MainButton:active {
+  box-shadow: none;
+}
+
+.RefreshButton {
+  position: absolute;
+  bottom: 15px;
+  right: 90px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .RefreshButton {
+    right: 15px;
+  }
+}
+
+.RefreshButton:active {
+  animation: rotate .7s;
+}
+
+.SocialButtons {
+  position: absolute;
+  top: 30px;
+  right: 90px;
+}
+
+@media screen and (max-width: 768px) {
+  .SocialButtons {
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.SocialButton {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  border-radius: 100%;
+  font-size: 18px;
+  padding: 8px 11px;
+  margin: 0 5px;
+  transition: 300ms;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .SocialButton {
+    font-size: 15px;
+    padding: 4px 7px;
+  }
+}
+
+.SocialButton:hover {
+  background: white;
+  color: #fe8c00;
+}
+.bg-blue .SocialButton:hover { color: #00c6ff; }
+.bg-purple .SocialButton:hover { color: #9D50BB; }
+
+.Modal {
+  position: absolute;
+  z-index: 999;
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  height: 85vh;
+  left: 0; right: 0; bottom: 0; top: 0;
+  margin: auto;
+  color: black;
+  transform: scale(0);
+  transition: 500ms;
+  border-radius: 6px;
+  padding: 15px 40px;
+  opacity: 0;
+  overflow: auto;
+}
+.Modal.is-visible {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .Modal {
+    width: 97%;
+    padding: 15px 15px;
+  }
+}
+
+.Modal-close {
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #FF3B3B;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.Modal p a {
+  color: #0072ff;
+  font-weight: bold;
+}
+
+.Overlay {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+.Overlay.is-visible {
+  display: block;
+}
+
+.CVButton {
+  display: inline-block;
+  padding: 1em 2em;
+  text-decoration: none;
+  color: #1FC146;
+  font-weight: bold;
+  border: 2px solid #1FC146;
+  margin: 15px 5px;
+  font-size: 18px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.15);
+  transition: 100ms;
+}
+
+.CVButton:hover {
+  background: #1FC146;
+  color: white;
+}
+
+.CVButton:nth-child(2) {
+  color: #0072ff;
+  border-color: #0072ff;
+}
+
+.CVButton:nth-child(2):hover {
+  background: #0072ff;
+  color: white;
+}
+
+.u-center {
+  text-align: center;
+}
+
+#cursorCanvas {
+  width: 100vh;
+  height: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -15%);
+}
